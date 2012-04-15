@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D250F0F4153A90C40076B553 /* MessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D250F0F3153A90C40076B553 /* MessageManager.m */; };
+		D250F0F7153A977D0076B553 /* NotificationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D250F0F6153A977D0076B553 /* NotificationParser.m */; };
+		D253D9951539B7D4005BB67B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D253D9941539B7D4005BB67B /* Cocoa.framework */; };
+		D253D99F1539B7D4005BB67B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D253D99D1539B7D4005BB67B /* InfoPlist.strings */; };
+		D253D9A11539B7D4005BB67B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D253D9A01539B7D4005BB67B /* main.m */; };
+		D253D9A51539B7D4005BB67B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D253D9A31539B7D4005BB67B /* Credits.rtf */; };
+		D253D9A81539B7D4005BB67B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D253D9A71539B7D4005BB67B /* AppDelegate.m */; };
+		D253D9AB1539B7D4005BB67B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D253D9A91539B7D4005BB67B /* MainMenu.xib */; };
+		D253D9B21539B806005BB67B /* Skype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D253D9B11539B806005BB67B /* Skype.framework */; };
+		D253D9C5153A3AE8005BB67B /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D253D9C0153A3AB9005BB67B /* libuv.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D253D9BF153A3AB9005BB67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D253D9B3153A3AB9005BB67B /* uv.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1366FBDA3B41EA03E9CC86CA;
+			remoteInfo = uv;
+		};
+		D253D9C1153A3AB9005BB67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D253D9B3153A3AB9005BB67B /* uv.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64757BCA7335FEFCED9A25EC;
+			remoteInfo = "run-tests";
+		};
+		D253D9C3153A3AB9005BB67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D253D9B3153A3AB9005BB67B /* uv.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0F9AD78A28D4AB83078B4C46;
+			remoteInfo = "run-benchmarks";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D250F0F2153A90C40076B553 /* MessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageManager.h; sourceTree = "<group>"; };
+		D250F0F3153A90C40076B553 /* MessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageManager.m; sourceTree = "<group>"; };
+		D250F0F5153A977D0076B553 /* NotificationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationParser.h; sourceTree = "<group>"; };
+		D250F0F6153A977D0076B553 /* NotificationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationParser.m; sourceTree = "<group>"; };
+		D253D9901539B7D4005BB67B /* skype_bouncer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skype_bouncer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D253D9941539B7D4005BB67B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D253D9971539B7D4005BB67B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D253D9981539B7D4005BB67B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D253D9991539B7D4005BB67B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D253D99C1539B7D4005BB67B /* skype_bouncer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "skype_bouncer-Info.plist"; sourceTree = "<group>"; };
+		D253D99E1539B7D4005BB67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D253D9A01539B7D4005BB67B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D253D9A21539B7D4005BB67B /* skype_bouncer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "skype_bouncer-Prefix.pch"; sourceTree = "<group>"; };
+		D253D9A41539B7D4005BB67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D253D9A61539B7D4005BB67B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D253D9A71539B7D4005BB67B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D253D9AA1539B7D4005BB67B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D253D9B11539B806005BB67B /* Skype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Skype.framework; sourceTree = "<group>"; };
+		D253D9B3153A3AB9005BB67B /* uv.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uv.xcodeproj; path = ../libuv/uv.xcodeproj; sourceTree = "<group>"; };
+		D253D9C8153A3B32005BB67B /* ares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares.h; sourceTree = "<group>"; };
+		D253D9C9153A3B32005BB67B /* ares_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares_version.h; sourceTree = "<group>"; };
+		D253D9CA153A3B32005BB67B /* uv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uv.h; sourceTree = "<group>"; };
+		D253D9CB153A3B32005BB67B /* eio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eio.h; sourceTree = "<group>"; };
+		D253D9CC153A3B32005BB67B /* ev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ev.h; sourceTree = "<group>"; };
+		D253D9CD153A3B32005BB67B /* ngx-queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ngx-queue.h"; sourceTree = "<group>"; };
+		D253D9CE153A3B32005BB67B /* uv-unix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uv-unix.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D253D98D1539B7D4005BB67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D253D9C5153A3AE8005BB67B /* libuv.a in Frameworks */,
+				D253D9951539B7D4005BB67B /* Cocoa.framework in Frameworks */,
+				D253D9B21539B806005BB67B /* Skype.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D253D9851539B7D4005BB67B = {
+			isa = PBXGroup;
+			children = (
+				D253D9C6153A3B32005BB67B /* include */,
+				D253D99A1539B7D4005BB67B /* skype_bouncer */,
+				D253D9931539B7D4005BB67B /* Frameworks */,
+				D253D9911539B7D4005BB67B /* Products */,
+				D253D9B3153A3AB9005BB67B /* uv.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		D253D9911539B7D4005BB67B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9901539B7D4005BB67B /* skype_bouncer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D253D9931539B7D4005BB67B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9B11539B806005BB67B /* Skype.framework */,
+				D253D9941539B7D4005BB67B /* Cocoa.framework */,
+				D253D9961539B7D4005BB67B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D253D9961539B7D4005BB67B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9971539B7D4005BB67B /* AppKit.framework */,
+				D253D9981539B7D4005BB67B /* CoreData.framework */,
+				D253D9991539B7D4005BB67B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D253D99A1539B7D4005BB67B /* skype_bouncer */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9A61539B7D4005BB67B /* AppDelegate.h */,
+				D253D9A71539B7D4005BB67B /* AppDelegate.m */,
+				D253D9A91539B7D4005BB67B /* MainMenu.xib */,
+				D253D99B1539B7D4005BB67B /* Supporting Files */,
+				D250F0F2153A90C40076B553 /* MessageManager.h */,
+				D250F0F3153A90C40076B553 /* MessageManager.m */,
+				D250F0F5153A977D0076B553 /* NotificationParser.h */,
+				D250F0F6153A977D0076B553 /* NotificationParser.m */,
+			);
+			path = skype_bouncer;
+			sourceTree = "<group>";
+		};
+		D253D99B1539B7D4005BB67B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D253D99C1539B7D4005BB67B /* skype_bouncer-Info.plist */,
+				D253D99D1539B7D4005BB67B /* InfoPlist.strings */,
+				D253D9A01539B7D4005BB67B /* main.m */,
+				D253D9A21539B7D4005BB67B /* skype_bouncer-Prefix.pch */,
+				D253D9A31539B7D4005BB67B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D253D9B4153A3AB9005BB67B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9C0153A3AB9005BB67B /* libuv.a */,
+				D253D9C2153A3AB9005BB67B /* run-tests */,
+				D253D9C4153A3AB9005BB67B /* run-benchmarks */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D253D9C6153A3B32005BB67B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9C7153A3B32005BB67B /* uv-private */,
+				D253D9C8153A3B32005BB67B /* ares.h */,
+				D253D9C9153A3B32005BB67B /* ares_version.h */,
+				D253D9CA153A3B32005BB67B /* uv.h */,
+			);
+			name = include;
+			path = ../libuv/include;
+			sourceTree = "<group>";
+		};
+		D253D9C7153A3B32005BB67B /* uv-private */ = {
+			isa = PBXGroup;
+			children = (
+				D253D9CB153A3B32005BB67B /* eio.h */,
+				D253D9CC153A3B32005BB67B /* ev.h */,
+				D253D9CD153A3B32005BB67B /* ngx-queue.h */,
+				D253D9CE153A3B32005BB67B /* uv-unix.h */,
+			);
+			path = "uv-private";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D253D98F1539B7D4005BB67B /* skype_bouncer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D253D9AE1539B7D4005BB67B /* Build configuration list for PBXNativeTarget "skype_bouncer" */;
+			buildPhases = (
+				D253D98C1539B7D4005BB67B /* Sources */,
+				D253D98D1539B7D4005BB67B /* Frameworks */,
+				D253D98E1539B7D4005BB67B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = skype_bouncer;
+			productName = skype_bouncer;
+			productReference = D253D9901539B7D4005BB67B /* skype_bouncer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D253D9871539B7D4005BB67B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D253D98A1539B7D4005BB67B /* Build configuration list for PBXProject "skype_bouncer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D253D9851539B7D4005BB67B;
+			productRefGroup = D253D9911539B7D4005BB67B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D253D9B4153A3AB9005BB67B /* Products */;
+					ProjectRef = D253D9B3153A3AB9005BB67B /* uv.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D253D98F1539B7D4005BB67B /* skype_bouncer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D253D9C0153A3AB9005BB67B /* libuv.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libuv.a;
+			remoteRef = D253D9BF153A3AB9005BB67B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D253D9C2153A3AB9005BB67B /* run-tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "run-tests";
+			remoteRef = D253D9C1153A3AB9005BB67B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D253D9C4153A3AB9005BB67B /* run-benchmarks */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "run-benchmarks";
+			remoteRef = D253D9C3153A3AB9005BB67B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D253D98E1539B7D4005BB67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D253D99F1539B7D4005BB67B /* InfoPlist.strings in Resources */,
+				D253D9A51539B7D4005BB67B /* Credits.rtf in Resources */,
+				D253D9AB1539B7D4005BB67B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D253D98C1539B7D4005BB67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D253D9A11539B7D4005BB67B /* main.m in Sources */,
+				D253D9A81539B7D4005BB67B /* AppDelegate.m in Sources */,
+				D250F0F4153A90C40076B553 /* MessageManager.m in Sources */,
+				D250F0F7153A977D0076B553 /* NotificationParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D253D99D1539B7D4005BB67B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D253D99E1539B7D4005BB67B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D253D9A31539B7D4005BB67B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D253D9A41539B7D4005BB67B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D253D9A91539B7D4005BB67B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D253D9AA1539B7D4005BB67B /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D253D9AC1539B7D4005BB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D253D9AD1539B7D4005BB67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D253D9AF1539B7D4005BB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "skype_bouncer/skype_bouncer-Prefix.pch";
+				INFOPLIST_FILE = "skype_bouncer/skype_bouncer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D253D9B01539B7D4005BB67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "skype_bouncer/skype_bouncer-Prefix.pch";
+				INFOPLIST_FILE = "skype_bouncer/skype_bouncer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D253D98A1539B7D4005BB67B /* Build configuration list for PBXProject "skype_bouncer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D253D9AC1539B7D4005BB67B /* Debug */,
+				D253D9AD1539B7D4005BB67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D253D9AE1539B7D4005BB67B /* Build configuration list for PBXNativeTarget "skype_bouncer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D253D9AF1539B7D4005BB67B /* Debug */,
+				D253D9B01539B7D4005BB67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D253D9871539B7D4005BB67B /* Project object */;
+}
