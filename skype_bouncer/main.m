@@ -16,7 +16,7 @@ static pthread_t thread;
 
 static void irc_write_cb(uv_write_t *req, int status)
 {
-    NSLog(@"Write");
+    NSLog(@"Write irc: %d", status);
     free(req);
 }
 
@@ -42,6 +42,14 @@ static uv_buf_t irc_alloc_cb(uv_handle_t *handle, size_t size)
     
     return buf;
 }
+
+
+static void close_cb(uv_handle_t* handle)
+{
+    NSLog(@"===================CLOSED===============");
+}
+
+
 ///int uv_read_start(uv_stream_t* stream, uv_alloc_cb alloc_cb,
 //                   uv_read_cb read_cb) {
 static void irc_connect_cb(uv_connect_t *conn_req, int status)
@@ -78,6 +86,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in addr = uv_ip4_addr("127.0.0.1",6667); 
     uv_tcp_init(uv_default_loop(),&in_socket);
     uv_tcp_connect(&connect, &in_socket, addr,irc_connect_cb);
+
     pthread_create(&thread,NULL, (void*)run_ircd,NULL);
     NSLog(@"default_loop");
     //uv_run(uv_default_loop());

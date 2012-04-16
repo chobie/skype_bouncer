@@ -14,9 +14,17 @@
 
 extern uv_tcp_t in_socket;
 
+static void _close_cb(uv_handle_t* handle)
+{
+    NSLog(@"Uv Close callback");
+}
+
 static void _write_cb(uv_write_t *req, int status)
 {
-    NSLog(@"Write");
+    NSLog(@"Write status: %d", status);
+    if (status == 0) {
+//        uv_close(, _close_cb);
+    }
     free(req);
 }
 

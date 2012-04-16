@@ -15,7 +15,7 @@ static id _instance = nil;
 
 static void write_cb(uv_write_t *req, int status)
 {
-    NSLog(@"Write2");
+    NSLog(@"Write2 status; %d", status);
     free(req);
 }
 
@@ -50,17 +50,22 @@ static void write_cb(uv_write_t *req, int status)
             if ([a count] >= 3) {
                 NSLog(@"################# EMIT MESSAGE ####################");
                 
-                NSMutableDictionary *chat = [dict objectForKey:[a objectForKey:@"CHATNAME"]];
-                uv_write_t *req = (uv_write_t *)malloc(sizeof(*req));
-                uv_buf_t buf[1];
-                NSString *msg = [NSString stringWithFormat:@"PRIVMSG #bridge :%@@%@> %@\n", 
-                                 [a objectForKey:@"FRIEND_DISPLAYNAME"],
-                                 [chat objectForKey:@"FRIENDLYNAME"],
-                                 [a objectForKey:@"BODY"]];
-                NSLog(@"PRIV: %@", msg);
+                NSArray *array = [[a objectForKey:@"BODY"] componentsSeparatedByString:@"\n"];
                 
-                buf[0] = uv_buf_init([msg UTF8String],strlen([msg UTF8String]));
-                uv_write(req, (uv_stream_t*)&in_socket, buf, 1, write_cb);
+                for (NSString *body in array) {
+                    NSMutableDictionary *chat = [dict objectForKey:[a objectForKey:@"CHATNAME"]];
+                    uv_write_t *req = (uv_write_t *)malloc(sizeof(*req));
+                    uv_buf_t buf[1];
+                    NSLog(@"body : %@", body);
+                    NSString *msg = [NSString stringWithFormat:@"PRIVMSG #bridge :%@@%@> %@\n", 
+                                     [a objectForKey:@"FRIEND_DISPLAYNAME"],
+                                     [chat objectForKey:@"FRIENDLYNAME"],
+                                     body];
+                    NSLog(@"PRIV: %@", msg);
+                    
+                    buf[0] = uv_buf_init([msg UTF8String],strlen([msg UTF8String]));
+                    uv_write(req, (uv_stream_t*)&in_socket, buf, 1, write_cb);
+                }
             }
     }
 }
