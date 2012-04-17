@@ -67,6 +67,14 @@
         return false;
     }    
 }
+-(Boolean)isChats
+{
+    if ([[array objectAtIndex:0] compare:@"CHATS"] == NSOrderedSame) {
+        return true;
+    } else {
+        return false;
+    }    
+}
 -(Boolean)hasStatus
 {
     if ([[array objectAtIndex:2] compare:@"STATUS"] == NSOrderedSame) {

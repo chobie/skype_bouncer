@@ -11,6 +11,7 @@
 #import "uv.h"
 #import "MessageManager.h"
 #import "NotificationParser.h"
+#import "ChatRoomManager.h"
 
 extern uv_tcp_t in_socket;
 
@@ -53,15 +54,21 @@ static void _write_cb(uv_write_t *req, int status)
 - (void)skypeNotificationReceived:(NSString*)aNotificationString
 {
     MessageManager *manager = (MessageManager*)[MessageManager sharedInstnace];
+    ChatRoomManager *cmanager = (ChatRoomManager*)[ChatRoomManager sharedInstnace];
 
 	NSLog(@"LOG: %@",aNotificationString);
     
     /* debug log */
-    uv_write_t *req = (uv_write_t *)malloc(sizeof(*req));
-    uv_buf_t buf[1];
-    NSString *msg = [NSString stringWithFormat:@"PRIVMSG #debug :%@\n", aNotificationString];
-    buf[0] = uv_buf_init([msg UTF8String],strlen([msg UTF8String]));    
-    uv_write(req, (uv_stream_t*)&in_socket, buf, 1, _write_cb);
+//    NSArray *debug_list = [aNotificationString componentsSeparatedByString:@"\n"];
+//    for(NSString *im in debug_list) {
+//        uv_write_t *req = (uv_write_t *)malloc(sizeof(*req));
+//        uv_buf_t *buf = (uv_buf_t *)malloc(sizeof(uv_buf_t)*1);
+//        NSString *msg = [NSString stringWithFormat:@"PRIVMSG #debug :%@\n", im];
+//        NSLog(@"DB: %@", msg);
+//        buf[0] = uv_buf_init([msg UTF8String],strlen([msg UTF8String]));
+//        uv_write(req, (uv_stream_t*)&in_socket, buf, 1, _write_cb);
+//    }
+//    [debug_list release];
     /* debug log end */
     
     NotificationParser *parser = [[NotificationParser alloc] init];
@@ -114,8 +121,33 @@ static void _write_cb(uv_write_t *req, int status)
         
     } else if ([parser isChat]) {
         if ([parser hasFriendlyName]) {
-            NSLog(@"friendly name");
+            NSLog(@"friendly name: %@", hoge);
             [manager addProperty:[array objectAtIndex:1] property:@"FRIENDLYNAME" value:hoge];
+            
+            if (![cmanager hasRegistered:[hoge stringByReplacingOccurrencesOfString:@" " withString:@"_"]]) {
+                [cmanager addRoom:[hoge stringByReplacingOccurrencesOfString:@" " withString:@"_"] roomName:@""];
+
+                uv_write_t *req  = (uv_write_t *)malloc(sizeof(*req));
+                uv_buf_t *buf    = (uv_buf_t*)malloc(sizeof(uv_buf_t)*2);
+                NSString *join   = [NSString stringWithFormat:@"join #%@\n", [hoge stringByReplacingOccurrencesOfString:@" " withString:@"_"]];
+                NSString *invite = [NSString stringWithFormat:@"INVITE %@ #%@\n", @"chobie",[hoge stringByReplacingOccurrencesOfString:@" " withString:@"_"]];
+
+                buf[0] = uv_buf_init((const char*)[join UTF8String], (int)[join length]);
+                buf[1] = uv_buf_init((const char*)[invite UTF8String], (int)[invite length]);
+                NSLog(@"join : %@", join);
+                uv_write(req, (uv_stream_t*)&in_socket, buf, 2, _write_cb);
+                [NSThread sleepForTimeInterval:1];
+//                [join release];
+//                [invite release];
+            }
+        }
+    } else if ([parser isChats]) {
+
+        for (NSString *item in array) {
+            NSString *tmp = [[NSString alloc] initWithFormat:@"GET CHAT %@ FRIENDLYNAME", [item substringToIndex:[item length]-1]];
+            NSLog(@"log %@", tmp);
+            [SkypeAPI sendSkypeCommand:tmp];
+            [tmp release];
         }
     }
     
@@ -136,7 +168,8 @@ static void _write_cb(uv_write_t *req, int status)
 			fprintf(stderr,"Failed to connect\n");
 			break;
 		case 1:
-			fprintf(stderr,"Failed to connect\n");
+			/* OK */
+            [SkypeAPI sendSkypeCommand:@"SEARCH CHATS"];
 			break;
 		default:
 			fprintf(stderr,"Failed to connect\n");
@@ -168,9 +201,6 @@ static void _write_cb(uv_write_t *req, int status)
         NSLog(@"Skype is runninn");
     }
     if ([SkypeAPI isSkypeAvailable]) {
-        NSLog(@"Skype is available");
-    }
-    if (IsSkypeAvailable()){
         NSLog(@"Skype is available");
     }
 

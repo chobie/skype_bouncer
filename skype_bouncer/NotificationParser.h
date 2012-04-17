@@ -21,6 +21,7 @@
 -(Boolean)hasFriendlyName;
 -(Boolean)hasChatName;
 -(Boolean)isChat;
+-(Boolean)isChats;
 -(Boolean)received;
 -(Boolean)sent;
 -(void)setString:(NSString*)string;

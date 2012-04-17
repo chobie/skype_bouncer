@@ -57,9 +57,9 @@ static void write_cb(uv_write_t *req, int status)
                     uv_write_t *req = (uv_write_t *)malloc(sizeof(*req));
                     uv_buf_t buf[1];
                     NSLog(@"body : %@", body);
-                    NSString *msg = [NSString stringWithFormat:@"PRIVMSG #bridge :%@@%@> %@\n", 
+                    NSString *msg = [NSString stringWithFormat:@"PRIVMSG #%@ :%@> %@\n",
+                                     [[chat objectForKey:@"FRIENDLYNAME"] stringByReplacingOccurrencesOfString:@" " withString:@"_"],
                                      [a objectForKey:@"FRIEND_DISPLAYNAME"],
-                                     [chat objectForKey:@"FRIENDLYNAME"],
                                      body];
                     NSLog(@"PRIV: %@", msg);
                     

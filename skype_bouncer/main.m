@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "uv.h"
 #import "pthread.h"
+#import <Skype/Skype.h>
 
 uv_tcp_t in_socket;
 
@@ -88,9 +89,7 @@ int main(int argc, char *argv[])
     uv_tcp_connect(&connect, &in_socket, addr,irc_connect_cb);
 
     pthread_create(&thread,NULL, (void*)run_ircd,NULL);
-    NSLog(@"default_loop");
-    //uv_run(uv_default_loop());
-    NSLog(@"default_loop");
+    [NSThread sleepForTimeInterval:3];
     
     return NSApplicationMain(argc, (const char **)argv);
 }

@@ -17,6 +17,7 @@
 		D253D9AB1539B7D4005BB67B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D253D9A91539B7D4005BB67B /* MainMenu.xib */; };
 		D253D9B21539B806005BB67B /* Skype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D253D9B11539B806005BB67B /* Skype.framework */; };
 		D253D9C5153A3AE8005BB67B /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D253D9C0153A3AB9005BB67B /* libuv.a */; };
+		D27F0C8F153D9DF200B0AAFD /* ChatRoomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D27F0C8E153D9DF200B0AAFD /* ChatRoomManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		D253D9CC153A3B32005BB67B /* ev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ev.h; sourceTree = "<group>"; };
 		D253D9CD153A3B32005BB67B /* ngx-queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ngx-queue.h"; sourceTree = "<group>"; };
 		D253D9CE153A3B32005BB67B /* uv-unix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uv-unix.h"; sourceTree = "<group>"; };
+		D27F0C8D153D9DF200B0AAFD /* ChatRoomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomManager.h; sourceTree = "<group>"; };
+		D27F0C8E153D9DF200B0AAFD /* ChatRoomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				D250F0F3153A90C40076B553 /* MessageManager.m */,
 				D250F0F5153A977D0076B553 /* NotificationParser.h */,
 				D250F0F6153A977D0076B553 /* NotificationParser.m */,
+				D27F0C8D153D9DF200B0AAFD /* ChatRoomManager.h */,
+				D27F0C8E153D9DF200B0AAFD /* ChatRoomManager.m */,
 			);
 			path = skype_bouncer;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				D253D9A81539B7D4005BB67B /* AppDelegate.m in Sources */,
 				D250F0F4153A90C40076B553 /* MessageManager.m in Sources */,
 				D250F0F7153A977D0076B553 /* NotificationParser.m in Sources */,
+				D27F0C8F153D9DF200B0AAFD /* ChatRoomManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
